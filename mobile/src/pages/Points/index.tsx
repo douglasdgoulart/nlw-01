@@ -138,7 +138,6 @@ const Points = () => {
   const routeParams = routes.params as Params;
 
   useEffect(() => {
-    console.log(routeParams);
     async function loadPosition() {
       const { status } = await Location.requestPermissionsAsync();
 
@@ -174,7 +173,6 @@ const Points = () => {
       }
     }).then(response => {
       setPoints(response.data);
-      console.log(`city: ${routeParams.city}, UF: ${routeParams.uf}, Items ${selectedItems.join(',')}`);
     })
   },[selectedItems])
 
